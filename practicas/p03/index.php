@@ -17,5 +17,21 @@
         //myvar = 3.141516;
         echo 'myvar es incorrecta <br>';
     ?>
+    <h2>Inciso 2</h2>
+    <p>2. Proporcionar los valores de $a, $b, $c como sigue:</p>
+    <p>$a = “ManejadorSQL”, $b = 'MySQL', $c = &$a</p>
+    <?php
+        $a = 'ManejadorSQL';
+        $b = 'MySQL';
+        $c = &$a;
+        $a = 'PHP server';
+        $b = &$a;
+        echo "$a <br>";
+        echo "$b <br>";
+        echo "$c <br>";
+    ?>
+    <p>Se les asigno los mismos valores debido a que tenemos en nuestras variables &$a lo que significa que las variables tomaran dicho valor que en este caso es PHP server</p>
+    <br>
+
 </body>
 </html>
