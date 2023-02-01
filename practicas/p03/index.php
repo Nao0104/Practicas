@@ -32,6 +32,25 @@
     ?>
     <p>Se les asigno los mismos valores debido a que tenemos en nuestras variables &$a lo que significa que las variables tomaran dicho valor que en este caso es PHP server</p>
     <br>
+    <h2>Inciso 3</h2>
+    <p>Muestra el contenido de cada variable inmediatamente después de cada asignación, verificar la evolución del tipo de estas variables (imprime todos los componentes de los arreglo):</p>
+    <p> $a = “PHP5”, $z[] = &$a, $b = “5a version de PHP”, $c = $b*10, $a .= $b, $b *= $c, $z[0] = “MySQL”;</p>
+    <?php
+       $a = 'PHP5';
+       echo "$a <br>";
+       $z[] = &$a;
+       var_dump ($z);
+       $b = '5a version de PHP';
+       echo "<br> $b <br>";
+       $c = "$b*10";
+       print_r($c);
+       $a .= $b;
+       echo "<br> $a <br>";
+       "$b *= $c";
+       echo "$b <br>";
+       $z[0] = 'MySQL';
+       var_dump($z);
+    ?>
 
 </body>
 </html>
