@@ -9,13 +9,26 @@
     <p>$_myvar, $_7var, myvar, $myvar, $var7, $_element1, $house*5</p>
     <?php
         $_myvar = 'hola';
-        echo '$_myvar es correcta <br>';
+        echo '$_myvar es correcta ya que es valido, inicia con un underscore <br>';
 
         $_7var = 11;
-        echo '$_7var es correcta <br>' ;
+        echo '$_7var es correcta ya que es valido, inicia con un underscore <br>' ;
 
         //myvar = 3.141516;
         echo 'myvar es incorrecta <br>';
+
+        $myvar = 3.1416;
+        echo '$myvar es correcta, uso correcto del nombre y contiene el signo $';
+
+        $var7 = 21;
+        echo '$var7 es correcta';
+
+        $_element1 = '<3';
+        echo '$_element1 es correcto';
+
+        //$house*5 = 'hola';
+        echo '$house*5 es incorrecto';
+
     ?>
     <h2>Inciso 2</h2>
     <p>2. Proporcionar los valores de $a, $b, $c como sigue:</p>
@@ -73,6 +86,22 @@ la matriz $GLOBALS o del modificador global de PHP.</p>
        echo "<br> $b <br>";
        print_r($c);
        //echo "<br> $a <br>";
+    ?>
+    <h2>Inciso 5</h2>
+    <p>5. Dar el valor de las variables $a, $b, $c al final del siguiente script:</p>
+    <p>$a = “7 personas”;
+$b = (integer) $a;
+$a = “9E3”;
+$c = (double) $a;</p>
+    <?php
+        $a = "7 personas";
+        echo "El valor de a es: $a";
+        $b = (integer)$a;
+        echo "<br> El valor de b es: $b <br>";
+        $a = "9E3";
+        echo "El valor nuevo de a es: $a <br>";
+        $c = (double) $a;
+        echo "El valor de c es: $c";
     ?>
 </body>
 </html>
