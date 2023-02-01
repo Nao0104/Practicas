@@ -51,6 +51,28 @@
        $z[0] = 'MySQL';
        var_dump($z);
     ?>
-
+    <h2>Inciso 4</h2>
+    <p>Lee y muestra los valores de las variables del ejercicio anterior, pero ahora con la ayuda de
+la matriz $GLOBALS o del modificador global de PHP.</p>
+    <p> $a = “PHP5”, $z[] = &$a, $b = “5a version de PHP”, $c = $b*10, $a .= $b, $b *= $c, $z[0] = “MySQL”;</p>
+    <?php
+       $a = "PHP5";
+       $z[] = &$a;
+       $b = '5a version de PHP';
+       $c = "$b*10";
+       $a .= $b;
+       "$b *= $c";
+       $z[0] = "MySQL";
+       function test()
+       {
+       global $a, $z, $b, $c;
+       }
+       test();
+       echo "$a <br>";
+       var_dump ($z);
+       echo "<br> $b <br>";
+       print_r($c);
+       //echo "<br> $a <br>";
+    ?>
 </body>
 </html>
