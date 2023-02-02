@@ -145,8 +145,16 @@ $c = (double) $a;</p>
     settype($e, "integer");
     echo '<br> Valor de $e: '.$e.'<br>';
     echo 'Valor de $f: '.$f.'<br>';
-
-
     ?>
+
+    <h2>Inciso 7</h2>
+    <p>Usando la variable predefinida $_SERVER, determina lo siguiente:</p>
+    <p> a. La versión de Apache y PHP, <br> b. El nombre del sistema operativo (servidor), <br> c. El idioma del navegador (cliente). <br></p>
+
+    <?php
+    echo $_SERVER['SERVER_SIGNATURE'];
+    echo $_SERVER['SERVER_NAME'];echo '<br>';
+    echo $_SERVER['HTTP_ACCEPT_LANGUAGE'];
+    ?> 
 </body>
 </html>
