@@ -103,5 +103,50 @@ $c = (double) $a;</p>
         $c = (double) $a;
         echo "El valor de c es: $c";
     ?>
+
+    <h2>Inciso 6</h2>
+    <p>
+    Dar y comprobar el valor booleano de las variables $a, $b, $c, $d, $e y $f y muéstralas <br>
+    usando la función var_dump(<'datos'>). <br>
+    </p>
+
+    <?php
+    $a = TRUE;
+    $b = TRUE;
+    $c = FALSE;
+    $d = FALSE;
+    $e = TRUE;
+    $f = FALSE;
+
+    var_dump($a); echo '<br>';
+    var_dump($b); echo '<br>';
+    var_dump($c); echo '<br>';
+    var_dump($d); echo '<br>';
+    var_dump($e); echo '<br>';
+    var_dump($f);
+
+    echo '<br>Después investiga una función de PHP que permita transformar el valor booleano de $c y $e <br>
+    en uno que se pueda mostrar con un echo:<br>';
+
+    unset($a, $b, $c, $d, $e, $f);
+
+    $a = "0";
+    $b = "TRUE";
+    $c = FALSE;
+    $d = ($a OR $b);
+    $e = ($a AND $c);
+    $f = ($a XOR $b);
+
+    echo 'Valor de a: '.$a.'<br>';
+    echo 'Valor de b: '.$b.'<br>';
+    settype($c, "integer");
+    echo ' Valor de $c: '.$c.'<br>';
+    echo 'Valor de $d: '.$d;
+    settype($e, "integer");
+    echo '<br> Valor de $e: '.$e.'<br>';
+    echo 'Valor de $f: '.$f.'<br>';
+
+
+    ?>
 </body>
 </html>
