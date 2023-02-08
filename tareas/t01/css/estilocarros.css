@@ -1,0 +1,114 @@
+h1, h5, h2{
+	font-family: Times New Roman;
+}
+
+*{
+	box-sizing: border-box;
+}
+.boxtext{
+    text-align: left;
+    padding-left: 2vw;
+    width: 50%;
+}
+.boximgth{
+    width: 30%;
+    height: 10%;
+	text-align: right;
+}
+body{
+	margin: 0;
+	font-family: Times New Roman;
+}
+p{
+	font-family: 'Times New Roman', Times, serif;
+	align= center;
+}
+table{
+    width: 70%;
+    margin-top: 5%;
+    font-size: 1.5vw;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+ 
+.alink{
+	 color: black;
+ }
+.img1{
+    width: 17vw;
+    height: 15vw;
+}
+
+.img2{
+    width: 19vw;
+    height: 15vw;
+}
+.imgcarro1{
+    width: 40vw;
+    height: 30vw;
+}
+
+
+.principal{
+	background-color: white;
+	display: block;
+	margin:  auto;
+	text-align: center;
+	font-family: Verdana;
+}
+
+.cabecera{
+	
+	background: rgb(255,119,119);
+background: linear-gradient(0deg, rgba(255,119,119,1) 0%, rgba(255,232,155,1) 20%, rgba(188,255,157,1) 40%, rgba(155,245,255,1) 60%, rgba(197,172,255,1) 80%, rgba(245,203,235,1) 100%);
+}
+
+.cabecera h1{
+	margin: auto;
+	font-size: 30px;
+	letter-spacing: 4px;
+	font-family: Candara;
+
+}
+
+.navegacion{
+	background-color: #5A5A5A;
+	
+}
+
+.navegacion li:hover{
+	background-color: #373737;
+	border-radius: 5px;
+}
+a{
+	font-family: 'Times New Roman', Times, serif;
+}
+td{
+	font-family: 'Times New Roman', Times, serif;
+}
+.boton:hover{
+	background-color: #B0FFFD;
+	border-color: #B0FFFD;
+}
+
+.pie{
+	margin-top: 150px;
+
+}
+
+.contenedor_Tarjeta {
+    margin: 20px;
+}
+
+.contenedor_Tarjeta a {
+    display: inline-block;
+}
+
+
+.cartas{
+	margin-bottom: 12rem;
+}
+
+.card-group img{
+	height: 20rem;
+	width: 100%;
+}
