@@ -127,7 +127,7 @@
                 $letras = array($i,chr($i));
                 foreach($letras as $numero => $letra)
                 {
-                    echo "[$letra]  ";
+                    echo "=> [$letra]  ";
                 }
                 echo "<br>";
             }
