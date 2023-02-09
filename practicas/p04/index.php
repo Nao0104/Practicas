@@ -151,7 +151,7 @@
         </p>
         <p>
         <b> R:</b>
-            <form id="formulario1" action="./src/script1.php" method="post">
+            <form id="formulario1" action="http://localhost/tecweb/practicas/p04/src/script1.php" method="post">
             <fieldset>
                 <legend>Información Personal</legend>
                 <ol>
