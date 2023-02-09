@@ -20,7 +20,7 @@
         <p>Escribir programa para comprobar si un número es un múltiplo de 5 y 7.</p>
         <p>
             R:
-            <?php
+             <?php
             if (!empty($_GET['numero'])) {
                 $numero = $_GET['numero'];
                 if ($numero % 7 == 0 && $numero % 5 == 0) {
@@ -46,6 +46,31 @@
             R:
             <?php
             // AQUÍ VA EL CÓDIGO DE SOLUCIÓN
+            $matriz = [[],[],[]];
+            $contador = 0;
+
+            do {
+                global  $matriz;
+                $pos1 = (int)rand(10,100);
+                $pos2 = (int)rand(10,100);
+                $pos3 = (int)rand(10,100);
+                $matriz[0][] = $pos1;
+                $matriz[1][] = $pos2;
+                $matriz[2][] = $pos3;
+
+                $contador ++;
+            }while($pos1 % 2 ==0 ||	 $pos2%2 !=0 || $pos3%2 == 0);
+
+            for($i=0; $i<$contador; $i++){
+            foreach($matriz as $lista )
+            {
+                echo "$lista[$i],";
+            }
+            echo '<br>';
+            }
+            echo '<br>';
+            $num = $contador*3;
+            echo "$num numeros obtenidos de $contador iteraciones";
             ?>
         </p>
     </div>
@@ -57,6 +82,7 @@
             R:
             <?php
             // AQUÍ VA EL CÓDIGO DE SOLUCIÓN
+    
             ?>
         </p>
     </div>
