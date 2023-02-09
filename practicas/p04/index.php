@@ -88,8 +88,11 @@
 
                 echo "Buscando el primer numero aleatorio que sea multiplo de $num<br>";
 
-                while(is_int($i=rand(10,100)) && $i % $num != 0){
+                $i=rand(10,100);
+                while($i % $num != 0){
+                //while(is_int($i=rand(10,100)) && $i % $num != 0){
                 echo "Numero aleatorio: $i <br>";
+                $i=rand(10,100);
                 }
                 echo "<br>Primer numero mulriplo de $num: $i";
                 ?>
@@ -99,7 +102,7 @@
                 do{
                     $j = rand(10,100);
                     echo "Numero aleatorio: $j<br>";
-                }while(is_int($j) && $j % $num != 0);
+                }while($j % $num != 0);
                 echo "<br>Primer numero mulriplo de $num: $j";
             ?>
         </p>
@@ -172,34 +175,39 @@
     <div>
         <h3>Ejercicio 6</h3>
         <p>
-            Usar las variables <strong>$edad</strong> y <strong>$sexo</strong> en una instrucción if para identificar una persona de sexo "femenino", 
-            cuya edad oscile entre los 18 y 35 años y mostrar un mensaje de bienvenida apropiado. Por ejemplo:
+        Crea en código duro un arreglo asociativo que sirva para registrar el parque vehicular de
+una ciudad.
         </p>
         <p>
-            <em>Bienvenida, usted está en el rango de edad permitido.</em>
+          <b>  R: </b>
+            <form id="formulario2" action="./src/script2.php" method="post">
+            <fieldset>
+                <ol>
+                <li>Matricula: <select name="matricula">
+                    <option >PEP3837</option>
+                    <option >ZSE62320</option>
+                    <option >WQO5672</option>
+                    <option >REW3459</option>
+                    <option >YTR6390</option>
+                    <option >OIU1129</option>
+                    <option >POP4178</option>
+                    <option >DSA1273</option>
+                    <option >HGF3416</option>
+                    <option >LKJ8192</option>
+                    <option >MKL2219</option>
+                    <option >CVN9813</option>
+                    <option >WAX5188</option>
+                    <option >GOU7755</option>
+                    <option >HYI7777</option>
+                </select><li><br>
+                </ol>
+            </fieldset>
+            <p>
+            <input type="submit" value = "Consultar">
+            </p>
+            </form>
         </p>
-        <p>
-            En caso contrario, deberá devolverse otro mensaje indicando el error.
-        </p>
-        <ul>
-            <li>Los valores para $edad y $sexo se deben obtener por medio de un formulario en HTML.</li>
-            <li>Utilizar el la Variable Superglobal $_POST (revisar documentación).</li>
-        </ul>
-        <p>
-            R:
-        </p>
-        <form id="formulario1" action="./src/script1.php" method="post">
-        <fieldset>
-            <legend>Información Personal</legend>
-            <ol>
-            <li><label>Edad:</label> <input type="text" name="edad"></li>
-            <li><label>Sexo:</label> <input type="text" name="sexo"></li>
-            </ol>
-        </fieldset>
-        <p>
-            <input type="submit" value="¡OK!">
-        </p>
-        </form>
     </div>
+    <hr>
 </body>
 </html>
