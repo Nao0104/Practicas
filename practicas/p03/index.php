@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"&gt;
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Práctica 2</title>
 </head>
@@ -32,26 +32,25 @@
     ?>
     <h2>Inciso 2</h2>
     <p>2. Proporcionar los valores de $a, $b, $c como sigue:</p>
-    <p>$a = “ManejadorSQL”, $b = 'MySQL', $c = &$a</p>
+    <p>$a = “ManejadorSQL”, $b = 'MySQL', $c = "ampa"</p>
     <?php
         $a = 'ManejadorSQL';
         $b = 'MySQL';
-        $c = &$a;
+        $c = "&amp$a";
         $a = 'PHP server';
-        $b = &$a;
+        $b = "&amp$a";
         echo "$a <br>";
         echo "$b <br>";
         echo "$c <br>";
     ?>
-    <p>Se les asigno los mismos valores debido a que tenemos en nuestras variables &$a lo que significa que las variables tomaran dicho valor que en este caso es PHP server</p>
-    <br>
+    <p>Se les asigno los mismos valores debido a que tenemos en nuestras variables "amp$a" lo que significa que las variables tomaran dicho valor que en este caso es PHP server &nbsp;</p>
     <h2>Inciso 3</h2>
     <p>Muestra el contenido de cada variable inmediatamente después de cada asignación, verificar la evolución del tipo de estas variables (imprime todos los componentes de los arreglo):</p>
-    <p> $a = “PHP5”, $z[] = &$a, $b = “5a version de PHP”, $c = $b*10, $a .= $b, $b *= $c, $z[0] = “MySQL”;</p>
+    <p> $a = “PHP5”, $z[] = amp$a, $b = “5a version de PHP”, $c = $b*10, $a .= $b, $b *= $c, $z[0] = “MySQL”;</p>
     <?php
        $a = 'PHP5';
        echo "$a <br>";
-       $z[] = &$a;
+       $z[] = "&amp$a";
        var_dump ($z);
        $b = '5a version de PHP';
        echo "<br> $b <br>";
@@ -67,10 +66,10 @@
     <h2>Inciso 4</h2>
     <p>Lee y muestra los valores de las variables del ejercicio anterior, pero ahora con la ayuda de
 la matriz $GLOBALS o del modificador global de PHP.</p>
-    <p> $a = “PHP5”, $z[] = &$a, $b = “5a version de PHP”, $c = $b*10, $a .= $b, $b *= $c, $z[0] = “MySQL”;</p>
+    <p> $a = “PHP5”, $z[] = "amp$a", $b = “5a version de PHP”, $c = $b*10, $a .= $b, $b *= $c, $z[0] = “MySQL”;</p>
     <?php
        $a = "PHP5";
-       $z[] = &$a;
+       $z[] = "&amp$a";
        $b = '5a version de PHP';
        $c = "$b*10";
        $a .= $b;
@@ -106,8 +105,8 @@ $c = (double) $a;</p>
 
     <h2>Inciso 6</h2>
     <p>
-    Dar y comprobar el valor booleano de las variables $a, $b, $c, $d, $e y $f y muéstralas <br>
-    usando la función var_dump(<'datos'>). <br>
+    Dar y comprobar el valor booleano de las variables $a, $b, $c, $d, $e y $f y muéstralas &nbsp;
+    usando la función var_dump("datos"). &nbsp;
     </p>
 
     <?php
@@ -149,12 +148,16 @@ $c = (double) $a;</p>
 
     <h2>Inciso 7</h2>
     <p>Usando la variable predefinida $_SERVER, determina lo siguiente:</p>
-    <p> a. La versión de Apache y PHP, <br> b. El nombre del sistema operativo (servidor), <br> c. El idioma del navegador (cliente). <br></p>
+    <p> a. La versión de Apache y PHP, &nbsp; b. El nombre del sistema operativo (servidor), &nbsp; c. El idioma del navegador (cliente). &nbsp;</p>
 
     <?php
     echo $_SERVER['SERVER_SIGNATURE'];
     echo $_SERVER['SERVER_NAME'];echo '<br>';
     echo $_SERVER['HTTP_ACCEPT_LANGUAGE'];
     ?> 
+    <p>
+    <a href="http://validator.w3.org/check?uri=referer"><img
+      src="http://www.w3.org/Icons/valid-xhtml11" alt="XHTML 1.1 válido" height="31" width="88" /></a>
+    </p>
 </body>
 </html>
