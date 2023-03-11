@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style type="text/css">
         ol,
+        ul {
+            list-style-type: none;
+        }
+      
+        #form {
+            width: 30%;
+        }
         ul {list-style-type: none;  }  #form {  width: 30%; }
         #boton{
             background-color: black;
@@ -13,7 +20,61 @@
             border-radius: 1em; }
     </style>  
 <body style="background-color:blueviolet;">
+    
 </body>
+<script type="text/javascript">
+    function verificarEntrada(control) {
+        if (control.value == '')
+            alert('Debe ingresar los datos');
+    }
+    function verificar(control) {
+        if (control.value.length > 100) {
+            control.focus();
+            alert('No exceda de 100 carateres');
+            control.value = "";
+        }
+    }
+    function verificarM(control) {
+        if (control.value == "") {
+            alert('Selecciona una marca');
+        }
+    }
+    function verificarMod(control) {
+        if (control.value.length > 25) {
+            control.focus();
+            alert('No exceda de 25 carateres');
+            control.value = "";
+        }
+    }
+    function verificarP(control) {
+        precio = parseFloat(control.value);
+        if (precio < 99.99) {
+            control.focus();
+            alert('El precio debe ser mayor a $99.99');
+            control.value = "";
+        }
+    }
+    function verificarD(control) {
+        if (control.value.length > 250) {
+            control.focus();
+            alert('No exceda de 250 carateres');
+            control.value = "";
+        }
+    }
+    function verificarU(control) {
+        uni = parseInt(control);
+        if (uni <= 0) {
+            control.focus();
+            alert('Dato erroneo');
+            control.value = "";
+        }
+    }
+    function verificarImg(control) {
+        if (control.value == "") {
+            control.value = "img/imagen.png";
+        }
+    }
+</script>
     <title>formulario productos</title>
 </head>
 <body>
@@ -23,24 +84,29 @@
             <h3>completa cada campo con la informacion correcta.</h3>
             <p><br></p>
             <ul>
-                <li>Nombre: <input id="nombre" name="nombre" type="text" placeholder="nombre" /></li>
+                <li>Nombre: <input id="nombre" name="nombre" type="text" onBlur="verificar(this)" required /></li>
                 <br>
-                <li>Marca: <input id="marca" name="marca" type="text"placeholder="marca" /></li>
+                <li>Marca: <select name="marca" id="marca" onchange="verificarM(this)">
+                <select>
+                    <option value="">Elegir</option>
+                    <option value="skullcandy">Jada Toys</option>
+                    <option value="Hyperx">LUPPA</option>
+                </select>
+                <br><br>
+                <li>Modelo: <input id="modelo" name="modelo" type="text" onBlur="verificarMod(this)" required/></li>
                 <br>
-                <li>Modelo: <input id="modelo" name="modelo" type="text" placeholder="modelo"/></li>
-                <br>
-                <li>Precio: <input id="precio" name="precio" type="text" placeholder="$000.00" /></li>
+                <li>Precio: <input id="precio" name="precio" type="text" placeholder="$000.00" onchange="verificarP(this)" required /></li>
                 <br>
                 <li>Detalles: <br>
                     <textarea name="detalles" rows="3" cols="50" id="detalles"
-                        placeholder="No más de 300 caracteres. "></textarea>
+                    placeholder="No más de 250 caracteres de longitud" onBlur="verificarD(this)" ></textarea>
                     <br><br>
-                <li>Unidades: <input id="unidades" name="unidades" type="text" placeholder="00"/></li>
+                <li>Unidades: <input id="unidades" name="unidades" type="text" onBlur="verificarU(this)" required/></li>
                 <br>
                 <li>Imagen: <input id="imagen" name="imagen" type="text" placeholder="'img/ejemplo.png'" /></li>
                 <br>
             </ul>
-            <p style="text-align: center;"><input id="boton" type="submit" value="INSERTAR" /></p>
+            <p style="text-align: center;"><input id="boton" type="submit" value="INSERTAR" onclick="verificarImg(imagen)" /></p>
         </form>
     </div>
 </body>
