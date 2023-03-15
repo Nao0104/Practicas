@@ -73,7 +73,7 @@ if (!empty($tope)) {
 		}
 
 		function send2form(_id, nombre, marca, modelo, precio, unidades, detalles, imagen) { //form) { 
-			var urlForm = "http://localhost/tecweb/practicas/p07/formulario_productos_v3.php";
+			var urlForm = "http://localhost/tecweb/practicas/p07/formulario_productos_v2.php";
 			var propID = "id=" + _id;
 			var propNombre = "nombre=" + nombre;
 			var propMarca = "marca=" + marca;

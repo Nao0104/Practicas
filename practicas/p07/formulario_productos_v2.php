@@ -97,21 +97,24 @@
             <ul>
                 <li>Nombre: <input id="nombre" name="nombre" type="text" onBlur="verificar(this)" value="<?= !empty($_POST['nombre']) ? $_POST['nombre'] : $_GET['nombre'] ?>" required /></li>
                 <br>
-                <li>Marca: <select name="marca" id="marca" onchange="verificarM(this)">
-                    <select>
-                        <option value="<?= !empty($_POST['marca']) ? $_POST['marca'] : $_GET['marca'] ?>">Elegir</option>
-                        <option value="skullcandy">Jada Toys</option>
-                        <option value="Hyperx">LUPPA</option>
-                    </select>
-                    <br><br>
+                <fieldset>
+                <li><label>Marca: </label>
+                <ul>
+                <li><label><input type="radio" name="marca" value="Jada"> Jada_Toys</label></li>
+                <li><label><input type="radio" name="marca" value="LUPPA"> LUPPA </label></li>
+                </ul>
+                </fieldset>
+                <br><br>
                 <li>Modelo: <input id="modelo" name="modelo" type="text" onBlur="verificarMod(this)" value="<?= !empty($_POST['modelo']) ? $_POST['modelo'] : $_GET['modelo'] ?>" required /></li>
                 <br>
                 <li>Precio: <input id="precio" name="precio" type="text" placeholder="$000.00" onchange="verificarP(this)" value="<?= !empty($_POST['precio']) ? $_POST['precio'] : $_GET['precio'] ?>" required /></li>
                 <br>
+                <fieldset>
                 <li>Detalles: <br>
                     <textarea name="detalles" rows="3" cols="50" id="detalles" placeholder="No más de 250 caracteres de longitud" onBlur="verificarD(this)">
                     <?php echo !empty($_POST['detalles']) ? $_POST['detalles'] : $_GET['detalles']; ?>
                     </textarea>
+                </fieldset>
                     <br><br>
                 <li>Unidades: <input id="unidades" name="unidades" type="text" onBlur="verificarU(this)" value="<?= !empty($_POST['unidades']) ? $_POST['unidades'] : $_GET['unidades'] ?>" required />
                 </li>

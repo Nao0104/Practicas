@@ -9,7 +9,7 @@ $precio = $_POST["precio"];
 $detalles = $_POST["detalles"];
 $unidades = $_POST["unidades"];
 $imagen   = $_POST["imagen"];
-$eliminado = 0;
+//$eliminado = 0;
 
 /** SE CREA EL OBJETO DE CONEXION */
 @$link = new mysqli('localhost', 'root', 'Naomi_010402', 'marketzone');
@@ -21,7 +21,7 @@ if ($link->connect_errno) {
 }
 
 if ($nombre != "" && $marca != "" && $modelo != "" && $precio != "" && $detalles != "" && $unidades != "" && $imagen != "") {
-    $sql = "INSERT INTO productos VALUES (null, '{$nombre}', '{$marca}', '{$modelo}', {$precio}, '{$detalles}', {$unidades}, '{$imagen}', 0)";
+    $sql = "INSERT INTO productos VALUES (null, '{$nombre}', '{$marca}', '{$modelo}', {$precio}, '{$detalles}', {$unidades}, '{$imagen}')";
     if ($link->query($sql)) {
         echo '<p style="font-family: Arial, Helvetica, sans-serif;">';
         echo '<strong>PRODUCTO INSERTADO</strong> <br><br> <strong>ID: </strong>' . $link->insert_id;

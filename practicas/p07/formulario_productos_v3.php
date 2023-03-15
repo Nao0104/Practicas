@@ -90,7 +90,7 @@
 
 <body>
     <div id="form">
-        <form method="POST" action="http://localhost/tecweb/practicas/p06/set_producto_v2.php" style="font-family: Arial, Helvetica, sans-serif;">
+        <form method="POST" action="http://localhost/tecweb/practicas/p07/update_producto.php" style="font-family: Arial, Helvetica, sans-serif;">
             <h1><strong>Registro de Productos</strong></h1>
             <h3>Llena cada campo con informacion correcta.</h3>
             <p><br></p>
