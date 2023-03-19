@@ -60,16 +60,15 @@ if (!empty($tope)) {
 			En este caso se obtienen todos los datos de la fila con el id encontrado
 			y que pertenecen a la clase "row-data".
 			*/
-			var _id = data[0].innerHTML;
+			var id = data[0].innerHTML;
 			var nombre = data[1].innerHTML;
 			var marca = data[2].innerHTML;
 			var modelo = data[3].innerHTML;
 			var precio = data[4].innerHTML;
 			var unidades = data[5].innerHTML;
 			var detalles = data[6].innerHTML;
-			var imagen = img.replace('http://localhost/tecweb/practicas/p06/', '');
-
-			send2form(_id, nombre, marca, modelo, precio, unidades, detalles, imagen);
+			var imagen =data[7].firstChild.getAttribute('src');
+			send2form(id, nombre, marca, modelo, precio, unidades, detalles, imagen);
 		}
 
 		function send2form(_id, nombre, marca, modelo, precio, unidades, detalles, imagen) { //form) { 
@@ -108,9 +107,9 @@ if (!empty($tope)) {
 			</thead>
 			<tbody>
 				<?php
-				$_id = 0;
+				$id = 0;
 				foreach ($data as $key => $value) {
-					echo '<tr id=' . $_id . '>';
+					echo '<tr id=' .$id . '>';
 					echo '<th scope="row" class="row-data"> ' . $value["id"] . ' </th>';
 					echo '<td class="row-data">' . $value["nombre"] . '</td>';
 					echo '<td class="row-data">' . $value["marca"] . '</td>';
@@ -120,7 +119,7 @@ if (!empty($tope)) {
 					echo '<td class="row-data">' . $value['detalles'] . '</td>';
 					echo '<td class="row-data"><img src=http://localhost/tecweb/practicas/p06/' . $value['imagen'] . ' width="200px" height="200px" /></td>';
 					echo '<td><input type="button" value="Modificar" onClick="show()" /></td>';
-					echo '</tr ' . $_id++ . '>';
+					echo '</tr ' . $id++ . '>';
 				}
 				?>
 
@@ -128,9 +127,7 @@ if (!empty($tope)) {
 		</table>
 	<?php endif; ?>
 
-	<p>
-		<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml11" alt="Valid XHTML 1.1" height="31" width="88" /></a>
-	</p>
+		
 </body>
 
 </html>

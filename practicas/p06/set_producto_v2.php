@@ -10,7 +10,7 @@ $detalles = $_POST["detalles"];
 $unidades = $_POST["unidades"];
 $imagen   = $_POST["imagen"];
 //$eliminado = 0;
-
+var_dump($_POST);
 /** SE CREA EL OBJETO DE CONEXION */
 @$link = new mysqli('localhost', 'root', 'Naomi_010402', 'marketzone');
 

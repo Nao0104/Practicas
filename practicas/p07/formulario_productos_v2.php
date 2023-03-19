@@ -1,130 +1,182 @@
 <!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style type="text/css">
-        ol,
-        ul {
-            list-style-type: none;
-        }
-
-        #form {
-            width: 30%;
-        }
-
-        #boton {
-            background-color: black;
-            color: white;
-            border-radius: 1em;
-        }
-    </style>   </style>  <body style="background-color:grey;"> </body>
-
-
-    <script type="text/javascript">
-        function verificarEntrada(control) {
-            if (control.value == '')
-                alert('Debe ingresar los datos');
-        }
-
-        function verificar(control) {
-            if (control.value.length > 100) {
-                control.focus();
-                alert('No exceda de 100 carateres');
-                control.value = "";
-            }
-        }
-
-        function verificarM(control) {
-            if (control.value == "") {
-                alert('Elige una marca');
-            }
-        }
-
-        function verificarMod(control) {
-            if (control.value.length > 25) {
-                control.focus();
-                alert('No exceda de 25 carateres');
-                control.value = "";
-            }
-        }
-
-        function verificarP(control) {
-
-            precio = parseFloat(control.value);
-            if (precio < 99.99) {
-                control.focus();
-                alert('El precio debe ser mayor a $99.99');
-                control.value = "";
-            }
-        }
-
-        function verificarD(control) {
-            if (control.value.length > 250) {
-                control.focus();
-                alert('No exceda de 250 carateres');
-                control.value = "";
-            }
-        }
-
-        function verificarU(control) {
-            uni = parseInt(control);
-            if (uni <= 0) {
-                control.focus();
-                alert('Dato erroneo');
-                control.value = "";
-            }
-        }
-
-        function verificarImg(control) {
-            if (control.value == "") {
-                control.value = "img/imagen.png";
-            }
-        }
-    </script>
-
-    <title>Practica 7</title>
-</head>
-
+<html>
+<head></head>
 <body>
-    <div id="form">
-        <form method="POST" action="http://localhost/tecweb/practicas/p06/set_producto_v2.php" style="font-family: Arial, Helvetica, sans-serif;">
-            <h1><strong>Registro de Productos</strong></h1>
-            <h3>Llena cada campo con informacion correcta.</h3>
-            <p><br></p>
-            <ul>
-                <li>Nombre: <input id="nombre" name="nombre" type="text" onBlur="verificar(this)" value="<?= !empty($_POST['nombre']) ? $_POST['nombre'] : $_GET['nombre'] ?>" required /></li>
-                <br>
-                <fieldset>
-                <li><label>Marca: </label>
-                <ul>
-                <li><label><input type="radio" name="marca" value="Jada"> Jada_Toys</label></li>
-                <li><label><input type="radio" name="marca" value="LUPPA"> LUPPA </label></li>
-                </ul>
-                </fieldset>
-                <br><br>
-                <li>Modelo: <input id="modelo" name="modelo" type="text" onBlur="verificarMod(this)" value="<?= !empty($_POST['modelo']) ? $_POST['modelo'] : $_GET['modelo'] ?>" required /></li>
-                <br>
-                <li>Precio: <input id="precio" name="precio" type="text" placeholder="$000.00" onchange="verificarP(this)" value="<?= !empty($_POST['precio']) ? $_POST['precio'] : $_GET['precio'] ?>" required /></li>
-                <br>
-                <fieldset>
-                <li>Detalles: <br>
-                    <textarea name="detalles" rows="3" cols="50" id="detalles" placeholder="No más de 250 caracteres de longitud" onBlur="verificarD(this)">
-                    <?php echo !empty($_POST['detalles']) ? $_POST['detalles'] : $_GET['detalles']; ?>
-                    </textarea>
-                </fieldset>
-                    <br><br>
-                <li>Unidades: <input id="unidades" name="unidades" type="text" onBlur="verificarU(this)" value="<?= !empty($_POST['unidades']) ? $_POST['unidades'] : $_GET['unidades'] ?>" required />
-                </li>
-                <br>
-                <li>Imagen: <input id="imagen" name="imagen" type="text" placeholder="img/ejemplo.png" value="<?= !empty($_POST['imagen']) ? $_POST['imagen'] : $_GET['imagen'] ?>" /></li>
-                <br>
-            </ul>
-            <p style="text-align: center;"><input id="boton" type="submit" value="INSERTAR" onclick="verificarImg(imagen)" /></p>
-        </form>
-    </div>
-</body>
+    <h2>Formulario para Registrar Productos</h2>
 
+    <form action="http://localhost/tecweb/practicas/p07/update_producto.php" method="post" id="form">
+        <label for="id">ID:</label><input type="text" name="id" value="<?=$_GET['id']?>" readonly>
+        <br/>
+        <label for="nombre">Nombre del Producto</label>
+        <input type="text" id="nombre" name="nombre" maxlength="100" value="<?= !empty($_POST['nombre'])?$_POST['nombre']:$_GET['nombre'] ?>">
+        <br/>
+        <label for="marca">Marca</label>
+
+        <?php
+        $aux = !empty($_POST['marca'])?$_POST['marca']:$_GET['marca'];
+
+        switch($aux){
+            case ' Jada Toys':{
+                echo '<select id="marca" name="marca">';
+                echo '<option value="">---</option>';
+                echo '<option value="Jada Toys">Jada Toys</option>';
+                echo '<option value="LUPPA">LUPPA</option>';
+                echo '</select>';
+
+                break;
+            }
+
+            case 'LUPPA':{
+                echo '<select id="marca" name="marca">';
+                echo '<option value="">---</option>';
+                echo '<option value="Jada Toys">Jada Toys</option>';
+                echo '<option value="LUPPA">LUPPA</option>';
+                echo '</select>';
+
+                break;
+            }
+
+
+            default:{
+                echo '<select id="marca" name="marca">';
+                echo '<option value="">---</option>';
+                echo '<option value="Jada Toys">Jada Toys</option>';
+                echo '<option value="LUPPA">LUPPA</option>';
+                echo '</select>';
+            }
+
+        }
+
+        ?>
+        <br/>
+
+        <label for="modelo">Modelo</label>
+        <input type="text" id="modelo" name="modelo" value="<?= !empty($_POST['modelo'])?$_POST['modelo']:$_GET['modelo'] ?>">
+        <br/>
+        <label for="precio">Precio $</label>
+        <input type="number" id="precio" min="0" step="any" name="precio" value="<?= !empty($_POST['precio'])?$_POST['precio']:$_GET['precio'] ?>">
+        <br/>
+        <label for="detalles">Detalles</label>
+        <br/>
+        <input type="text" name="detalles" id="detalles"  style="width:15vw" placeholder="250 caracteres como maximo" maxlength="250" value="<?= !empty($_POST['detalles'])?$_POST['detalles']:$_GET['detalles'] ?>"></textarea>
+        <br/>
+        <label for="unidades">Unidades</label>
+        <input type="number" id="unidades" min="0" name="unidades" value="<?= !empty($_POST['unidades'])?$_POST['unidades']:$_GET['unidades'] ?>">
+        <br/>
+        <label for="imagen">Direccion de la imagen</label>
+        <input type="text" id="imagen" placeholder="img/ejemplo.png" name="imagen" value="<?= !empty($_POST['imagen'])?$_POST['imagen']:$_GET['imagen'] ?>">
+        <br/>
+        <label for="eliminar">Eliminar</label>
+        <select name = "eliminar" id = "eliminar">
+            <option value = "1">SI</option>
+            <option value = "0">NO</option>
+        </select>
+        <br/>
+        <input type="submit">
+        <input type="reset">
+        <br/>
+        <p class="warnings" id="warnings"> </p>
+    </form>
+
+
+    <script>
+        
+            const nombre = document.getElementById("nombre");
+            const marca = document.getElementById("marca");
+            const modelo = document.getElementById("modelo");
+            const precio = document.getElementById("precio");
+            const detalles = document.getElementById("detalles");
+            const unidades = document.getElementById("unidades");
+            const imagen = document.getElementById("imagen");
+            const parrafo = document.getElementById("warnings");
+
+            const regex = /^[0-9]*$/;
+            const regexletras = /^[a-zA-Z]*$/;
+
+
+            form.addEventListener("submit", e=>{
+                
+                let warnings= ""
+                entrar = false;
+                
+                
+                if(nombre.value.length < 1){
+                    warnings += 'El nombre esta vacio <br/>';
+                    entrar = true
+                }else{
+                    if(regex.test(nombre.value)){
+                    warnings += 'El nombre no pueden ser solo numeros <br/>';
+                    entrar = true
+                }
+                if(nombre.value.length > 100){
+                    warnings += 'El nombre no puede ser mayor a 100 caracteres <br/>';
+                    entrar = true;
+                }
+                }
+                
+
+                if(marca.value.length < 1){
+                    warnings += 'La marca esta vacia, escoja una opcion<br/>';
+                    entrar = true
+                }
+                
+
+                if(modelo.value.length<1){
+                    warnings += 'El modelo esta vacio <br/>';
+                    entrar = true
+                }
+                if(modelo.value.length > 25){
+                    warnings += 'El modelo no puede ser mayor a 25 caracteres <br/>';
+                    entrar = true;
+                }
+                
+                
+
+                if(precio.value<99.99){
+                    warnings += 'El precio debe de ser mayor a $99.99 <br/>';
+                    entrar = true
+                }
+                
+
+                if(detalles.value.length > 1){
+                    if(regex.test(detalles.value)){
+                    warnings += 'Los detalles no pueden ser solo numeros <br/>';
+                    entrar = true
+                }
+                if(detalles.value.length>250){
+                    warnings += 'Los detalles del producto no deben ser mayores a 250 caracteres <br/>';
+                    entrar = true
+                }
+                }
+                
+
+                if(unidades.value<1){
+                    warnings += 'Debe haber al menos 1 unidad disponible <br/>';
+                    entrar = true
+                }else{
+                    if(regex.test(unidades.value)){
+                }else{
+                    warnings += 'Las unidades solo deben ser numeros <br/>';
+                    entrar = true
+                }
+                }
+
+                if(imagen.value.length<1){
+                    document.getElementById("imagen").value='img/imagen.png';
+                }
+                
+
+                if (entrar){
+                    parrafo.innerHTML = warnings;
+                    entrar = false;
+                    e.preventDefault()
+                }else{
+                    parrafo.innerHTML= 'Enviado';
+                }
+
+            })
+            
+        
+    </script>
+</body>
 </html>
