@@ -16,7 +16,7 @@ function init() {
     var JsonString = JSON.stringify(baseJSON, null, 2);
     document.getElementById("description").value = JsonString;
 }
-
+//Corrimiento del codigo con Jquery
 $(document).ready(function () {
     let edit = false;
     console.log('jQuery is working');
@@ -101,7 +101,7 @@ $(document).ready(function () {
         });
         e.preventDefault();
     });
-
+//Funcion para buscar producto
     function fetchProducts() {
         $.ajax({
             url: 'backend/product-list.php',
@@ -134,7 +134,7 @@ $(document).ready(function () {
             }
         });
     }
-
+//Funcion para el Boton de eliminar
     $(document).on('click', '.product-delete', function () {
         if (confirm('¿Quieres eliminar el producto?')) {
             const element = $(this)[0].parentElement.parentElement;
@@ -148,7 +148,7 @@ $(document).ready(function () {
             });
         }
     });
-
+//Funcion para editar el producto 
     $(document).on('click', '.product-item', function () {
         let element = $(this)[0].parentElement.parentElement;
         let id = $(element).attr('productId');
