@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CatalogoVOD>
+    <cuenta>
+        <correo>ixchel.cortes@alumno.buap.mx</correo>
+        <perfiles>
+            <perfil>
+                <usuario>Ixchel</usuario>
+                <idioma>Español</idioma>
+            </perfil>
+            <perfil>
+                <usuario>Juan Carlos Conde</usuario>
+                <idioma>Español</idioma>
+            </perfil>
+        </perfiles>
+    </cuenta>
+    <contenido>
+        <peliculas>
+            <genero>
+                <nombre>Terror</nombre>
+                <titulo>
+                    <nombre>El conjuro</nombre>
+                    <duracion>1:30</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Sonrie</nombre>
+                    <duracion>2:30</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>El exorcismo</nombre>
+                    <duracion>1:50</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>La casa de los sustos</nombre>
+                    <duracion>2:30</duracion>
+                </titulo>
+            </genero>
+            <genero>
+                <nombre>Romance</nombre>
+                <titulo>
+                    <nombre>A dos metros de ti</nombre>
+                    <duracion>2:00</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Tres metros sobre el cielo</nombre>
+                    <duracion>2:30</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>A todos los chicos de los que me enamore</nombre>
+                    <duracion>1:30</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Yo antes de ti</nombre>
+                    <duracion>2:00</duracion>
+                </titulo>
+            </genero>
+        </peliculas>
+        <programas>
+            <genero>
+                <nombre>Comedia</nombre>
+                <titulo>
+                    <nombre>Me caigo de risa</nombre>
+                    <duracion>1:00</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>La teoria del Big Bang</nombre>
+                    <duracion>1:00</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>40 y 20</nombre>
+                    <duracion>1:00</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Vecinos</nombre>
+                    <duracion>1:00</duracion>
+                </titulo>
+            </genero>
+            <genero>
+                <nombre>Informativo</nombre>
+                <titulo>
+                    <nombre>National Geografic</nombre>
+                    <duracion>1:30</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>SNN</nombre>
+                    <duracion>1:00</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Animal Planet</nombre>
+                    <duracion>1:30</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Las Noticias</nombre>
+                    <duracion>1:00</duracion>
+                </titulo>
+            </genero>
+        </programas>
+    </contenido>
+</CatalogoVOD>
