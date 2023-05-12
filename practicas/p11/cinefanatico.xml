@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE cinefanatico SYSTEM "cinefanatico.dtd">
+<cinefanatico>
+    <tarjeta noserie="123456" visitas="2" puntos="1000">
+        <nombre>Ixchel Naomi Cortes Montaño</nombre>
+        <correo>ixchel.cortes@alumno.buap.mx</correo>
+        <telefono tipo="movil">2711093577</telefono>
+    </tarjeta>
+    <tarjeta noserie="56789" visitas="5" puntos="150">
+        <nombre>Juan Carlos Conde Ramirez</nombre>
+        <correo>carlos.conder@correo.buap.mx</correo>
+    </tarjeta>
+</cinefanatico>
